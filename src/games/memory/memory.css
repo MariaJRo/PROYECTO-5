@@ -1,0 +1,87 @@
+.info-container {
+  display: flex;
+  gap: var(--gap-m);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--margin-xs);
+}
+
+.message {
+  min-height: 30px;
+  margin-bottom: var(--margin-s);
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-3);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  gap: var(--gap-s);
+  margin-bottom: 15px;
+}
+
+.memory-card {
+  width: 90px;
+  height: 90px;
+  perspective: 600px;
+  cursor: pointer;
+  position: relative;
+}
+
+.memory-card .front,
+.memory-card .back {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-xs);
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.8s ease;
+}
+
+.memory-card .front {
+  transform: rotateY(180deg);
+}
+
+.memory-card .back {
+  background-color: var(--color-2);
+  color: var(--color-0);
+}
+
+.memory-card.flip .front {
+  transform: rotateY(0deg);
+}
+
+.memory-card.flip .back {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 500px) {
+  .memory-grid {
+    grid-template-columns: repeat(3, 70px);
+    gap: var(--gap-s);
+  }
+
+  .memory-card {
+    width: 70px;
+    height: 70px;
+  }
+
+  .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .info-container {
+    gap: var(--gap-s);
+  }
+}

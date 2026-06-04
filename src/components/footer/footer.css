@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--color-2);
+  gap: var(--gap-s);
+}
+
+.copyright {
+  margin-top: var(--margin-xs);
+}
+
+@media (max-width: 600px) {
+  footer {
+    font-size: small;
+  }
+}

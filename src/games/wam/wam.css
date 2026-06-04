@@ -1,0 +1,77 @@
+.mole-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: var(--gap-s);
+  justify-content: center;
+}
+
+.hole {
+  width: 90px;
+  height: 90px;
+  background-color: var(--color-8);
+  border-radius: var(--border-radius-circle);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  transition: background-color 0.2s;
+}
+
+.hole.mole {
+  background-color: var(--color-3);
+}
+
+.hole.hit {
+  background-color: var(--color-11);
+}
+
+.hole.miss {
+  background-color: var(--color-12);
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-l);
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.info-container p {
+  font-size: 1.2rem;
+  color: var(--color-0);
+  margin: 0;
+}
+
+.buttons-container {
+  display: flex;
+  gap: var(--gap-s);
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  .mole-grid {
+    grid-template-columns: repeat(3, 70px);
+  }
+
+  .hole {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  .info-container {
+    gap: var(--gap-s);
+    flex-direction: column;
+  }
+
+  .info-container p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,17 @@
+.content h1 {
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px var(--color-3);
+}
+
+.arcade {
+  border-radius: var(--border-radius-s);
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  height: 350px;
+  transition: transform 0.3s ease;
+}
+
+.arcade:hover {
+  transform: scale(1.2);
+}
