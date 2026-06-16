@@ -1,8 +1,14 @@
 import './wam.css'
 
+let moleInterval = null
+let timerInterval = null
+
 export const initWam = () => {
   const divContent = document.querySelector('.content')
   divContent.replaceChildren()
+
+  clearInterval(moleInterval)
+  clearInterval(timerInterval)
 
   let score = 0
   let highScore = localStorage.getItem('wamHighScore') || 0
@@ -10,8 +16,6 @@ export const initWam = () => {
   let timeLeft = 20
   let gameActive = false
   let currentMole = null
-  let moleInterval = null
-  let timerInterval = null
 
   const title = document.createElement('h1')
   title.textContent = 'Whack a Mole'
