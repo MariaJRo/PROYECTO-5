@@ -8,8 +8,8 @@ export const initXXO = () => {
   let currentPlayer = 'X'
   let gameActive = true
 
-  let scoreX = localStorage.getItem('scoreX') || 0
-  let scoreO = localStorage.getItem('scoreO') || 0
+  let scoreX = Number(localStorage.getItem('scoreX')) || 0
+  let scoreO = Number(localStorage.getItem('scoreO')) || 0
 
   const title = document.createElement('h1')
   title.textContent = 'TicTacToe'
@@ -58,11 +58,12 @@ export const initXXO = () => {
       [2, 4, 6]
     ]
 
-    for (let combo of wins) {
+    for (const combo of wins) {
       const [a, b, c] = combo
 
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
         win(board[a])
+        return
       }
     }
 
