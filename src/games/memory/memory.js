@@ -66,6 +66,7 @@ export const initMemory = () => {
       if (lockBoard) return
       if (card === firstCard) return
       if (lives <= 0) return
+      if (card.classList.contains('flip')) return
 
       card.classList.add('flip')
 
